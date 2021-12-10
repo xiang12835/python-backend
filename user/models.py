@@ -8,3 +8,10 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
+
+    def to_json(self):
+        d = {
+            "name": self.name,
+            "age": self.age,
+        }
+        return d
