@@ -4,7 +4,7 @@
 
 - Python 3.9
 - Django 2.2.25
-- djangorestframework
+- djangorestframework 3.12.4
 
 ## 目录
 
