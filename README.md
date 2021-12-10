@@ -6,6 +6,13 @@
 - Django 2.2.25
 - djangorestframework
 
+## 目录
+
+- background : 后台脚本
+- base : Django 配置
+- user : 用户模块
+- manage.py : Django 启动
+
 ## 运行
 
 ```
