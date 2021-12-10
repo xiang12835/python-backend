@@ -11,6 +11,7 @@ class User(models.Model):
 
     def to_json(self):
         d = {
+            "id": self.id,
             "name": self.name,
             "age": self.age,
         }

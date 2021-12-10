@@ -1,38 +1,87 @@
 # coding=utf-8
 from rest_framework import serializers
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import status
 
 from user.models import User
 
 
-class UserList(APIView):
+# https://www.django-rest-framework.org/tutorial/2-requests-and-responses/
+@api_view(['GET'])
+def user_lst(request):
     """
-    View to list all users in the system.
-
-    * Requires token authentication.
-    * Only admin users are able to access this view.
+    List all user.
     """
-    # authentication_classes = [authentication.TokenAuthentication]
-    # permission_classes = [permissions.IsAdminUser]
-
-    def get(self, request, format=None):
-        """
-        Return a list of all users.
-        """
-        datas = [user.to_json() for user in User.objects.all()]
-        return Response(datas)
+    datas = [user.to_json() for user in User.objects.all()]
+    return Response(datas)
 
 
-class UserDetail(APIView):
-    # 单查群查
-    def get(self, request, *args, **kwargs):
-        pk = kwargs.get('pk')
-        if pk:
-            user_obj = User.objects.get(pk=pk)
-            # user_ser = serializers.UserModelSerializer(user_obj)
-        else:
-            user_query = User.objects.filter().all()
-            # user_ser = serializers.UserModelSerializer(user_query, many=True)
-        # return APIResponse(results=book_ser.data)
-        return Response(data=user_obj.to_json())
+@api_view(['POST'])
+def user_add(request):
+    """
+    create a user instance.
+    """
+    try:
+        qd = request.data
+        user = User()
+        user.name = qd.get("name")
+        user.age = qd.get("age")
+        user.save()
+        return Response(user.to_json(), status=status.HTTP_201_CREATED)
+    except Exception:
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def user_dtl(request, pk):
+    """
+    Retrieve a user instance.
+    """
+    try:
+        user = User.objects.get(pk=pk)
+    except User.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    return Response(user.to_json())
+
+
+@api_view(['PUT'])
+def user_upd(request):
+    """
+    update a user instance.
+    """
+    qd = request.data
+
+    try:
+        user = User.objects.get(pk=qd.get("id"))
+    except User.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        user.name = qd.get("name")
+        user.age = qd.get("age")
+        user.save()
+    except Exception:
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
+    return Response(user.to_json())
+
+
+@api_view(['DELETE'])
+def user_del(request, pk):
+    """
+    delete a user instance.
+    """
+    try:
+        user = User.objects.get(pk=pk)
+    except User.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        user.delete()
+    except Exception:
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
+    return Response(status=status.HTTP_204_NO_CONTENT)
+
