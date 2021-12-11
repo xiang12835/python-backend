@@ -8,7 +8,6 @@ from rest_framework import status
 from user.models import User
 
 
-# https://www.django-rest-framework.org/tutorial/2-requests-and-responses/
 @api_view(['GET'])
 def user_lst(request):
     """
