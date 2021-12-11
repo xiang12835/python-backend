@@ -47,20 +47,25 @@ def user_dtl(request, pk):
 
 
 @api_view(['PUT'])
-def user_upd(request):
+def user_upd(request, pk):
     """
     update a user instance.
     """
     qd = request.data
 
     try:
-        user = User.objects.get(pk=qd.get("id"))
+        user = User.objects.get(pk=pk)
     except User.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     try:
-        user.name = qd.get("name")
-        user.age = qd.get("age")
+        name = qd.get("name")
+        age = qd.get("age")
+        if name:
+            user.name = name
+        if age:
+            user.age = age
+
         user.save()
     except Exception:
         return Response(status=status.HTTP_400_BAD_REQUEST)
