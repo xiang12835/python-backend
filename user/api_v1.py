@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 
+from base.common.http import R
 from user.models import User
 
 
@@ -14,7 +15,7 @@ def user_lst(request):
     List all user.
     """
     datas = [user.to_json() for user in User.objects.all()]
-    return Response(datas)
+    return R(datas)
 
 
 @api_view(['POST'])
@@ -28,9 +29,9 @@ def user_add(request):
         user.name = qd.get("name")
         user.age = qd.get("age")
         user.save()
-        return Response(user.to_json(), status=status.HTTP_201_CREATED)
+        return R(user.to_json(), http_status=status.HTTP_201_CREATED)
     except Exception:
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+        return R(http_status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
@@ -41,8 +42,8 @@ def user_dtl(request, pk):
     try:
         user = User.objects.get(pk=pk)
     except User.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-    return Response(user.to_json())
+        return R(http_status=status.HTTP_404_NOT_FOUND)
+    return R(user.to_json())
 
 
 @api_view(['PUT'])
@@ -55,7 +56,7 @@ def user_upd(request, pk):
     try:
         user = User.objects.get(pk=pk)
     except User.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        return R(http_status=status.HTTP_404_NOT_FOUND)
 
     try:
         name = qd.get("name")
@@ -67,9 +68,9 @@ def user_upd(request, pk):
 
         user.save()
     except Exception:
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+        return R(http_status=status.HTTP_400_BAD_REQUEST)
 
-    return Response(user.to_json())
+    return R(user.to_json())
 
 
 @api_view(['DELETE'])
@@ -80,12 +81,12 @@ def user_del(request, pk):
     try:
         user = User.objects.get(pk=pk)
     except User.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        return R(http_status=status.HTTP_404_NOT_FOUND)
 
     try:
         user.delete()
     except Exception:
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+        return R(http_status=status.HTTP_400_BAD_REQUEST)
 
-    return Response(status=status.HTTP_204_NO_CONTENT)
+    return R(http_status=status.HTTP_204_NO_CONTENT)
 
