@@ -30,7 +30,7 @@ def my_custom_one_sql(sql, db="cms_slave"):
 class SqlExecute(object):
 
     @classmethod
-    def fetch_all(cls, sql, db="cms"):
+    def fetch_all(cls, sql, db="cms_db"):
         cursor = connections[db].cursor()
         cursor.execute(sql)
         rows = cursor.fetchall()
@@ -38,7 +38,7 @@ class SqlExecute(object):
         return rows
 
     @classmethod
-    def fetch_one(cls, sql, db="cms"):
+    def fetch_one(cls, sql, db="cms_db"):
         cursor = connections[db].cursor()
         cursor.execute(sql)
         row = cursor.fetchone()
@@ -46,7 +46,7 @@ class SqlExecute(object):
         return row
 
     @classmethod
-    def execute_many(cls, sql, params, db="cms"):
+    def execute_many(cls, sql, params, db="cms_db"):
         cursor = connections[db].cursor()
         cursor.executemany(sql, params)
         cursor.close()
