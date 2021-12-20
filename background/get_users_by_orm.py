@@ -15,8 +15,8 @@ from user.models import User
 
 
 def run():
-    user = User.objects.get(name='shane')
-    print(user.age)
+    users = User.objects.all()
+    print([(u.name, u.age) for u in users])
 
 
 if __name__ == '__main__':
