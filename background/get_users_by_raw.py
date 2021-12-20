@@ -20,8 +20,8 @@ def run():
     """
 
     users = SqlExecute.fetch_all(sql, db="default")
-
     print(users)
+
 
 if __name__ == '__main__':
     run()
