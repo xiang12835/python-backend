@@ -1,4 +1,4 @@
-# python-backend
+# summer-cloud
 
 ## 功能
 
@@ -36,4 +36,3 @@ http://127.0.0.1:8000/api 接口文档
 ## 参考
 
 - [Django rest_framework实现增删改查接口](https://www.cnblogs.com/ghylpb/p/12115512.html)
-
