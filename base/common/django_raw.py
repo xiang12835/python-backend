@@ -11,7 +11,7 @@ def my_custom_stat_sql(sql):
     return rows
 
 
-def my_custom_sql(sql, db="cms_slave"):
+def my_custom_sql_all(sql, db="cms_slave"):
     cursor = connections[db].cursor()
     cursor.execute(sql)
     rows = cursor.fetchall()
@@ -19,7 +19,7 @@ def my_custom_sql(sql, db="cms_slave"):
     return rows
 
 
-def my_custom_one_sql(sql, db="cms_slave"):
+def my_custom_sql_one(sql, db="cms_slave"):
     cursor = connections[db].cursor()
     cursor.execute(sql)
     rows = cursor.fetchone()
