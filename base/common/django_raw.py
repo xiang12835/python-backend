@@ -22,9 +22,9 @@ def my_custom_sql_all(sql, db="cms_slave"):
 def my_custom_sql_one(sql, db="cms_slave"):
     cursor = connections[db].cursor()
     cursor.execute(sql)
-    rows = cursor.fetchone()
+    row = cursor.fetchone()
     cursor.close()
-    return rows
+    return row
 
 
 class SqlExecute(object):
