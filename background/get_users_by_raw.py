@@ -11,7 +11,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'base.settings')
 django.setup()
 
 
-from base.common.django_db import SqlExecute
+from base.common.django_raw import SqlExecute
 
 
 def run():
