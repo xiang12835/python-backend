@@ -11,6 +11,7 @@
 - Python 3.7
 - Django 2.2.25
 - djangorestframework 3.12.4
+- sqlite3 (可替换成 MySql 或其他数据库)
 
 ## 目录
 
