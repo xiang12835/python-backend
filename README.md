@@ -11,6 +11,7 @@
 - Python 3.9
 - Django 2.2.25
 - djangorestframework 3.12.4
+- django-rest-swagger 2.2.0
 
 ## 目录
 
@@ -30,7 +31,7 @@ python3 manage.py runserver 127.0.0.1:8000
 ```
 http://127.0.0.1:8000 首页
 http://127.0.0.1:8000/admin 后台管理系统
-http://127.0.0.1:8000/api 接口文档
+http://127.0.0.1:8000/doc 接口文档
 ```
 
 ## 参考
