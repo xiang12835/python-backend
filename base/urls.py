@@ -56,6 +56,9 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
     path('user/', include('user.urls')),
+
+    # https://django-rest-swagger.readthedocs.io/en/latest/
+    # swagger ui
     path('doc/', schema_view, name='doc'),
 
 ]
