@@ -20,6 +20,12 @@ from user.models import User
 from rest_framework import routers, serializers, viewsets
 
 
+from rest_framework.schemas import get_schema_view
+from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
+schema_view = get_schema_view(title='加邮 API', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer])
+
+
+
 # # Serializers define the API representation.
 # class UserSerializer(serializers.HyperlinkedModelSerializer):
 #     class Meta:
@@ -34,7 +40,7 @@ from rest_framework import routers, serializers, viewsets
 #
 #
 # # Routers provide an easy way of automatically determining the URL conf.
-# router = routers.DefaultRouter()
+router = routers.DefaultRouter()
 # router.register(r'users', UserViewSet)
 
 
@@ -47,7 +53,9 @@ urlpatterns = [
 
     # https://www.django-rest-framework.org/
     # django rest api & api auth (login/logout)
-    # path('api/', include(router.urls)),
-    # path('api-auth/', include('rest_framework.urls')),
-    path('', include('user.urls')),
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
+    path('user/', include('user.urls')),
+    path('doc/', schema_view, name='doc'),
+
 ]
