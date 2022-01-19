@@ -55,10 +55,12 @@ urlpatterns = [
     # django rest api & api auth (login/logout)
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
-    path('user/', include('user.urls')),
 
     # https://django-rest-swagger.readthedocs.io/en/latest/
     # swagger ui
     path('doc/', schema_view, name='doc'),
+
+    # custom app
+    path('user/', include('user.urls')),
 
 ]
