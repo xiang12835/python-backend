@@ -8,10 +8,11 @@
 
 ## 环境
 
-- Python 3.9
-- Django 2.2.25
+- Python 3.7
+- Django 2.2
 - djangorestframework 3.12.4
 - django-rest-swagger 2.2.0
+- sqlite3 (可替换成 MySql 或其他数据库)
 
 ## 目录
 
