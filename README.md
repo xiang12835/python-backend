@@ -6,20 +6,39 @@
 - 后台管理系统
 - 后台脚本
 
+### 目录
+
+- base : Django 配置
+- script : 后台脚本
+- user : 用户模块
+- manage.py : Django 启动
+
 ### 环境
 
 - Python 3.7
 - Django 2.2
-- djangorestframework 3.12.4
+
+pip install django==2.2.25
+
+- djangorestframework 3.9.2
+
+pip install djangorestframework==3.9.2
+
 - django-rest-swagger 2.2.0
+
+pip install django-rest-swagger==2.2.0
+
 - sqlite3 (可替换成 MySql 或其他数据库)
 
-### 目录
+### 迁移数据库
 
-- background : 后台脚本
-- base : Django 配置
-- user : 用户模块
-- manage.py : Django 启动
+python3 manage.py makemigrations
+
+python3 manage.py migrate
+
+### 创建超级用户
+
+python3 manage.py createsuperuser
 
 ### 运行
 
