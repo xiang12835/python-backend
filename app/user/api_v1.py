@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 
 from base.common.http import R
-from user.models import User
+from app.user.models import User
 
 
 @api_view(['GET'])

@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
-from user import views
-from user import api_v1, api_v2, api_v3
+from app.user import views
+from app.user import api_v1, api_v2, api_v3
 
 
 urlpatterns = [

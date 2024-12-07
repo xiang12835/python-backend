@@ -1,8 +1,8 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from user.models import User
-from user.serializers import UserSerializer
+from app.user.models import User
+from app.user.serializers import UserSerializer
 
 
 # https://www.django-rest-framework.org/tutorial/2-requests-and-responses/

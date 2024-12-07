@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
 
-    'user',
+    # custom app
+    'app.user',
 ]
 
 REST_FRAMEWORK = {

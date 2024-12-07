@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from base import views
-from user.models import User
+from app.user.models import User
 from rest_framework import routers, serializers, viewsets
 
 
@@ -61,6 +61,6 @@ urlpatterns = [
     path('doc/', schema_view, name='doc'),
 
     # custom app
-    path('user/', include('user.urls')),
+    path('user/', include('app.user.urls')),
 
 ]
