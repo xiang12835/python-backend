@@ -16,7 +16,7 @@ class User(AbstractUser):
     NORMAL = 2
 
     role = models.IntegerField(verbose_name=u'用户角色', choices=ROLE_CHOICES, default=1)
-
+    '''
     # 重写groups字段，并指定related_name
     groups = models.ManyToManyField(
         'auth.Group',
@@ -36,7 +36,7 @@ class User(AbstractUser):
         related_name="custom_user_permissions",
         related_query_name="user",
     )
-
+    '''
     class Meta:
         app_label = 'user'
 
