@@ -130,5 +130,9 @@ dmypy.json
 
 # -- custom --
 **/.idea
+.idea/
+data/
+data.zip
+app/stat/
 
 

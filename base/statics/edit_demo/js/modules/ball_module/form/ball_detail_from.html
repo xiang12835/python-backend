@@ -1,0 +1,52 @@
+<div id='dialog-popuser-ball' title="添加" style="display: none">
+    <form method="post" novalidate="novalidate">
+        
+        <div id="div_for_common_type_field">
+            <span id="u-title">标题:<input type="text" class="form-control" id="title"
+                                     placeholder="标题..."/></span>
+       
+        <span id="u-page-type">跳转方式:<br>
+            <select class="form-control valid" id="skip_type" name="video_type" style="width: 50%">
+                <option value="url" >url</option>
+                <option value="page" >模块页面</option>
+                <option value="article" >图文页面</option>
+                <option value="channel" >分类页面</option>
+            </select>
+        </span>
+
+        
+
+        <span id="u-page">页面跳转:
+            <input type="text" readonly="" class="little-form-control" id="page_name" value="">
+            <input type="hidden" id="page_id" value="h">
+            <a  href="#" class="btn btn-xs btn-default" id="page_skip_button">选择</a><br/>
+        </span>
+
+        <span id="u-url">
+            url<span style="color: orangered">*</span>:
+                <input type="text" class="form-control" id="url"
+                       placeholder="url"/>
+        </span>
+
+        <span id="u-img">图片（）:
+            <span id="ball-u-screen-button" class="btn btn-success fileinput-button">
+                <span>+ 上传图片...</span>
+                <input id="ball-u-screen-upload" type="file" name="files[]" multiple>
+            </span>
+            <div id="ball-u-screen-success" class="alert alert-success upload-pic"
+                 style="margin:0;  ">
+                <button type="button" class="close">&times;</button>
+                <img id='ball-u-screen-content' src=""
+                     class="img-polaroid" style="max-height: 150px;">
+            </div>
+            <div id="ball-u-screen-progress"
+                 class="progress progress-success progress-striped  active"
+                 style="display: none">
+                <div class="bar"></div>
+            </div>
+        </span>
+
+
+        </div>
+    </form>
+</div>

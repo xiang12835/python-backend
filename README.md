@@ -9,9 +9,10 @@
 ### 目录
 
 - base : Django 配置
-- script : 后台脚本
-- user : 用户模块
+- back : 后台脚本
 - manage.py : Django 启动
+- app.user : 用户管理
+- app.cms : 内容管理
 
 ### 环境
 

@@ -1,0 +1,33 @@
+<!--adv main template-->
+<script type="text/template" id="text-template">
+
+    <li id="<%- id %>" data-form='<%- form %>' data-id='<%- id %>' data-sort='<%- sort %>' data-type='<%- type %>'
+        onclick='formView.onItemSelect(this);'>
+        
+        <span name="title" style='display:none'>text标题</span>
+
+        <div id="app-adv">
+
+            <div class="app-adv">
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div id="<%- text_id %>">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </li>
+</script>
+
+<!--adv item template-->
+<script type="text/template" id="text-item-template">
+    <div class="v">
+        <div style="font-size:16px";>
+            <%=  item_text %>
+        </div>
+    </div>
+</script>

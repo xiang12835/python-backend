@@ -1,0 +1,268 @@
+/* 轮播图 */
+
+.app-carousel {
+
+    width: 300px;
+
+    display: block;
+
+    border: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    margin: 0px;
+    display: block;
+}
+
+.v {
+    width: 100%;
+}
+
+.v .v-thumb {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 150px;
+}
+
+.v .v-adv-thumb {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 75px;
+}
+
+.v .v-adv-thumb .v-pic-real {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.v .v-thumb .v-pic-real {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.v .v-description {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.v .v-overlay-large {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.v .v-overlay {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.v-title .v-num {
+    font-size: 12px;
+    color: #FFF;
+}
+
+.v-subtitle {
+    font-size: 10px;
+    color: #505054
+}
+
+.clearfix {
+    clear: both;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 盒子 */
+
+.app-box {
+    width: 300px;
+    border: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    margin: 0px;
+    display: block;
+}
+
+.app-box .v {
+    width: 100%;
+}
+
+.app-box .v .v-thumb {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 90px;
+}
+
+.app-box .v .v-vthumb{
+    /*position: relative;*/
+    /*float: left;*/
+    /*width: 100%;*/
+    min-height: 142px;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+.v-title {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", SimHei, helvetica, arial, verdana, tahoma, sans-serif;
+    color: #373737;
+    width: 100%;
+    overflow: hidden;
+    -webkit-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.v .v-metadata {
+
+}
+
+.app-box .box_tail {
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.app-box .box-tail-item {
+    border-right: 1px solid rgba(128, 128, 128, 0.3);
+    width: 80%;
+}
+
+.app-box .box-tail-item .tail-icon {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    float: left;
+    margin: 2px 5px;
+    width: 40px;
+}
+
+.app-box .box-tail-item .tail-info {
+    float: left;
+    width: 65%;
+    overflow: hidden;
+    height: 40px;
+    white-space: nowrap;
+    -webkit-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.app-box .box-tail-item .tail-info .title {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", SimHei, helvetica, arial, verdana, tahoma, sans-serif;
+    color: #373737;
+    line-height: 14px;
+}
+
+.app-box .box-tail-item .tail-info .desc {
+    font-size: 10px;
+    color: #505054;
+    line-height: 12px;
+}
+
+.app-ball {
+    border: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    margin: 0px;
+    display: block;
+}
+
+.app-ball .ball-thumb {
+    padding-top: 5px;;
+    width: 100%;
+}
+
+.app-ball .ball-thumb .ball-icon {
+    width: 42px;
+    margin: auto;
+}
+
+.app-ball .ball-thumb .ball-icon img {
+     -webkit-border-radius: 41px;
+    -moz-border-radius: 41px;
+    border-radius: 41px;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.app-ball .ball-thumb .ball-info {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", SimHei, helvetica, arial, verdana, tahoma, sans-serif;
+    color: #373737;
+    overflow: hidden;
+    -webkit-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

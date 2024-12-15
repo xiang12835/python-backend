@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.views import logout_then_login, LoginView
 from base import views
 from app.user.models import User
 from rest_framework import routers, serializers, viewsets
@@ -47,6 +48,8 @@ router = routers.DefaultRouter()
 urlpatterns = [
     # 首页
     path("", views.index),
+    path('signin/', LoginView.as_view(template_name='signin.html'), name="signin"),
+    path('signout/', logout_then_login, name="signout"),
 
     # 后台管理系统 url
     path('admin/', admin.site.urls),
@@ -62,5 +65,6 @@ urlpatterns = [
 
     # custom app
     path('user/', include('app.user.urls')),
+    # path('stat/', include('app.stat.urls')),
 
 ]

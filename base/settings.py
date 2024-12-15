@@ -40,9 +40,12 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework_swagger',
+    'bootstrap3',
 
     # custom app
+    'base',
     'app.user',
+    # 'app.stat',
 ]
 
 REST_FRAMEWORK = {
@@ -92,7 +95,11 @@ ROOT_URLCONF = 'base.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, "base/templates"),
+            os.path.join(BASE_DIR, "app/user/templates"),
+            # os.path.join(BASE_DIR, "app/stat/templates"),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -154,5 +161,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+# STATIC_URL：这是用于引用静态文件（如 CSS、JavaScript、图片等）的 URL 前缀。它通常被设置为 /static/ 或其他你喜欢的路径。
+# STATICFILES_DIRS：这是一个列表，包含所有静态文件目录的路径。Django 将会在这些目录中查找静态文件。
+# 在生产环境中，你应该将静态文件收集到一个单独的目录中，并让 Web 服务器（如 Nginx、Apache 等）直接服务这些文件，而不是通过 Django 来服务。你可以使用 manage.py collectstatic 命令来收集静态文件。
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'base/statics'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "base/staticfiles")
+
+LOGIN_URL = "/signin"
+LOGIN_REDIRECT_URL = "/user/system_user/list"

@@ -1,0 +1,195 @@
+{# Load the tag library #}
+{% load staticfiles %}
+{% load commontags %}
+{% load roletags %}
+{% load timetags %}
+{#{% load bootstrap3 %}#}
+
+{# Load CSS and JavaScript #}
+{#{% bootstrap_css %}#}
+{#{% bootstrap_javascript jquery='full' %}#}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{#{% bootstrap_messages %}#}
+
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <head xmlns="http://www.w3.org/1999/html">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="renderer" content="webkit">
+
+        <style>
+            .navbar-left a span {
+                display: none;
+            }
+
+            .navbar-left .active a {
+                color: orangered;
+            }
+
+            .navbar-left .active a span {
+                display: inherit;
+            }
+
+            .error {
+                color: red;
+            }
+
+            html, body {
+                min-width: 1200px;
+                background: #f8f9fb;
+            }
+
+            .header {
+                background-color: #fff;
+                font-family: 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', 黑体, Arial, sans-serif;
+            }
+
+            .header-box {
+                padding: 0 40px;
+                position: relative;
+                height: 60px;
+                background-color: #fff;
+                box-shadow: 0 1px 2px rgba(150, 150, 150, 0.3);
+            }
+
+            .header-box h3 {
+                margin: 0;
+                color: #777;
+            }
+
+            .container {
+                width: 100%;
+                padding: 40px 0;
+
+            }
+
+            .container-box {
+                background-color: #f8f9fb;
+            }
+
+            .account {
+                padding-top: 20px;
+                font-size: 14px;
+            }
+
+            .account div {
+                display: inline-block;
+            }
+
+            .account-meta {
+                width: auto;
+                padding-right: 5px;
+                text-align: right;
+                padding-left: 16px;
+            }
+
+            .account-link a {
+                display: inline-block;
+                margin-left: 5px;
+                line-height: 16px;
+                padding-left: 14px;
+                border-left: 1px solid #e7e7eb;
+                color: #222;
+                text-decoration: none;
+            }
+
+            .account-link a:hover {
+                color: #459ae9;
+                text-decoration: underline;
+            }
+
+            .account-back-home a {
+                border: none;
+                padding-right: 14px;
+            }
+
+            .account-back-home a:hover {
+                text-decoration: none;
+            }
+
+            .modular .dtitle {
+                cursor: pointer;
+                font-size: 18px;
+            }
+
+            .close_span {
+                float: right;
+                line-height: 33px;
+            }
+
+            .topimglogo {
+                width: 32px;
+                margin-top: -6px;
+            }
+
+            .f26 {
+                font-size: 26px;
+            }
+        </style>
+        {% block link %}
+        {% endblock %}
+    </head>
+<body>
+<div class="header">
+    <div class="header-box">
+        <div class="pull-left">
+            <h2>
+
+            <span style="text-align:center;">
+{#                 <img class="topimglogo" src="{{ request.user.application.logo }}">#}
+
+                {% block sysname %}
+                {% endblock %}
+
+            </span>
+            </h2>
+        </div>
+{#        {% if request.user.is_authenticated %}#}
+            <div class="pull-right">
+                <div class="account">
+                    <div class="account-link account-back-home">
+                        <a href="/" title="主页">
+                            <i class="iconfont icon-shouye f26"></i>
+{#                            <i class="glyphicon glyphicon-home"></i>#}
+                        </a>
+                    </div>
+                    <div class="account-meta">
+                        {{ request.user.get_username }}
+                    </div>
+                    <div class="account-logout account-link">
+                        <a href="/signout">退出</a>
+                        <i class="iconfont icon-exit"></i>
+{#                        <i class="glyphicon glyphicon-log-out"></i>#}
+                    </div>
+                </div>
+            </div>
+{#        {% endif %}#}
+    </div>
+</div>
+
+{% block middle_content %}
+{% endblock %}
+
+<div class="container">
+    <div class="container-box clearfix">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+{% block endlink %}
+{% endblock %}
+{% block endjs %}
+{% endblock %}
+<script type="text/javascript" language="javascript">
+</script>
+</body>
+</html>

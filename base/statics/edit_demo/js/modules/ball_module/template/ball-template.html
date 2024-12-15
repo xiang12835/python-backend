@@ -1,0 +1,33 @@
+<!--adv main template-->
+<script type="text/template" id="ball-template">
+
+    <li id="<%- id %>" data-form='<%- form %>' data-id='<%- id %>' data-sort='<%- sort %>' data-type='<%- type %>'
+        onclick='formView.onItemSelect(this);'>
+        <span name="title" style='display:none'>球区标题</span>
+        <div id="app-ball">
+            <div class="app-ball">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div id="<%- ball_id %>">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+
+<!--adv item template-->
+<script type="text/template" id="ball-item-template">
+    <div class="col-xs-3">
+        <div class="ball-thumb">
+            <div class="ball-icon">
+                <img src="<%- item_img %>" width="42px" height="42px">
+            </div>
+            <div class="ball-info">
+                <span class="title"><%- item_title %></span>
+            </div>
+        </div>
+    </div>
+</script>
