@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{#{% get_static_prefix %}#}
-
+{% get_static_prefix %}
 
 {% block title %}
     后台管理系统
@@ -12,30 +11,23 @@
 {% endblock %}
 
 {% block link %}
-{#    <link rel="stylesheet" href="{{ STATIC_URL }}file_upload/css/jquery.fileupload-ui.css">#}
-{#    <link rel="stylesheet" href="{{ STATIC_URL }}file_upload/css/jquery.fileupload.css">#}
-
-    <script src="{% static 'bootstrap3/js/bootstrap.min.js' %}"></script>
-    <link href="{% static 'bootstrap3/css/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
-    <link href="{% static 'toast_message/jquery.toastmessage.css' %}" rel="stylesheet" type="text/css"/>
     <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
     <script src="{% static 'js/jquery-ui.js' %}"></script>
     <script src="{% static 'jquery-validate/jquery.validate.js' %}"></script>
+    <link href="{% static 'toast_message/jquery.toastmessage.css' %}" rel="stylesheet" type="text/css"/>
 
+    <script src="{% static 'bootstrap-3/js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'bootstrap-3/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'edit_demo/css/jquery-ui.css' %}">
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="{% static 'ico/apple-touch-icon-144-precomposed.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="{% static 'ico/apple-touch-icon-114-precomposed.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="{% static 'ico/apple-touch-icon-72-precomposed.png' %}">
-
     <link href="https://at.alicdn.com/t/font_977902_uhxnl4oqvcd.css" rel="stylesheet" type="text/css"/>
 
-    <link rel="apple-touch-icon-precomposed" href="{% static 'ico/apple-touch-icon-57-precomposed.png' %}">
-    <link rel="shortcut icon" href="{% static 'ico/favicon.png' %}">
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'icon/apple-touch-icon-144-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'icon/apple-touch-icon-114-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'icon/apple-touch-icon-72-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'icon/apple-touch-icon-57-precomposed.png' %}">
+    <link rel="shortcut icon" href="{% static 'icon/favicon.png' %}">
 
 
     {% block header_link %}

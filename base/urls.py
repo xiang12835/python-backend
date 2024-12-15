@@ -65,6 +65,6 @@ urlpatterns = [
 
     # custom app
     path('user/', include('app.user.urls')),
-    # path('stat/', include('app.stat.urls')),
+    path('stat/', include('app.stat.urls')),
 
 ]

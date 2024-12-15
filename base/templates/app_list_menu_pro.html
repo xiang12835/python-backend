@@ -1,0 +1,54 @@
+<dl class="menu no_extra">
+
+    <div class="modular">
+        <!-- 系统 -->
+        <dt class="menu_subtitle dtitle">
+            <i class="glyphicon glyphicon-th-large"></i>
+            &nbsp;系统设置
+        </dt>
+        <dd class="menu_item" data-content-id="app" data-menu-id="1">
+            <a href="{% url 'system_user_list' %}">系统用户</a>
+        </dd>
+
+    </div>
+
+    <div class="modular">
+        <!-- 统计 -->
+        <dt class="menu_subtitle dtitle">
+            <i class="glyphicon glyphicon-th-large"></i>
+            &nbsp;统计管理
+        </dt>
+        <dd class="menu_item" data-content-id="app" data-menu-id="11">
+            <a href="{% url 'home_stat' %}">统计看板</a>
+        </dd>
+
+        <dd class="menu_item" data-content-id="app" data-menu-id="50">
+            <a href="{% url 'comment_month_stat' %}">每月评论数</a>
+        </dd>
+        <dd class="menu_item" data-content-id="app" data-menu-id="51">
+            <a href="{% url 'comment_date_color_stat' %}">每月正反面评论</a>
+        </dd>
+        <dd class="menu_item" data-content-id="app" data-menu-id="20">
+            <a href="{% url 'comment_locale_stat' %}">各地区评论数</a>
+        </dd>
+        <dd class="menu_item" data-content-id="app" data-menu-id="21">
+            <a href="{% url 'comment_color_stat' %}">各地区正反面评论</a>
+        </dd>
+        <dd class="menu_item" data-content-id="app" data-menu-id="22">
+            <a href="{% url 'comment_negative_stat' %}">负面评论Top100</a>
+        </dd>
+        <dd class="menu_item" data-content-id="app" data-menu-id="23">
+            <a href="{% url 'comment_positive_stat' %}">正面评论Top100</a>
+        </dd>
+        <dd class="menu_item" data-content-id="app" data-menu-id="10">
+            <a href="{% url 'question_count_stat' %}">问题关注度</a>
+        </dd>
+        <dd class="menu_item" data-content-id="app" data-menu-id="60">
+{#            <a href="{% url 'word_cloud_stat' %}">词云统计</a>#}
+            <a target="_blank" href="{% url 'word_cloud_stat' %}">词云统计</a>
+        </dd>
+
+
+    </div>
+
+</dl>

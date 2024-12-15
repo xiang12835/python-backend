@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     # custom app
     'base',
     'app.user',
-    # 'app.stat',
+    'app.stat',
 ]
 
 REST_FRAMEWORK = {

@@ -1,5 +1,9 @@
 {% extends 'app_base.html' %}
+{% load static %}
+
 {% block reset_css %}
+    <link rel="stylesheet" href="{% static 'file_upload/css/jquery.fileupload-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'file_upload/css/jquery.fileupload.css' %}">
     <style>
         .row {
             margin: 20px;
@@ -102,26 +106,27 @@
 {% endblock %}
 
 {% block js %}
-{#<script src="{{ STATIC_URL }}file_upload/js/jquery.fileupload.js"></script>#}
-{##}
-{#<script src="{{ STATIC_URL }}js/bootstrap.autocomplete.js"></script>#}
-{#<script src="{{ STATIC_URL }}js/json2.js"></script>#}
+<script src="{% static 'file_upload/js/jquery.fileupload.js' %}"></script>
+<script src="{% static 'js/bootstrap.autocomplete.js' %}"></script>
+<script src="{% static 'js/json2.js' %}"></script>
 
 <script type="text/javascript">
-{#    {% include "common/image_upload.js" %}#}
+    {% include "common/image_upload.js" %}
 
-
+    $(function(){
         function check() {
 
             return true;
         }
 
         $('#submit_btn').click(function(){
-            console.log('===========================')
             if(check()) {
                 $('form').submit();
             }
         });
+
+
+    });
 
 
 

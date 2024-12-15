@@ -55,6 +55,42 @@ http://127.0.0.1:8000/admin 后台管理系统
 http://127.0.0.1:8000/doc 接口文档
 ```
 
+### 关于前端
+
+jquery 1.11.3 + bootstrap 3.2.0
+
+>jquery
+
+https://jquery.com/
+
+>jquery-ui
+
+https://jqueryui.com/
+
+>jquery-validate
+
+https://jqueryvalidation.org/documentation/
+
+>jquery-toastmessage
+
+https://github.com/techatspree/jquery-toastmessage-plugin
+
+>bootstrap3
+
+https://v3.bootcss.com/
+
+>iconfont
+
+https://www.iconfont.cn/
+
+>fontawesome
+
+https://fontawesome.com/
+
+>JSON-js
+
+https://github.com/douglascrockford/JSON-js
+
 ### 参考
 
 - [Django rest_framework实现增删改查接口](https://www.cnblogs.com/ghylpb/p/12115512.html)
