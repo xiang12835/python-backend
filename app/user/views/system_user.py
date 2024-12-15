@@ -10,10 +10,10 @@ from django.urls import reverse, NoReverseMatch
 from django.http import HttpResponse, HttpResponseRedirect
 from base.utils.default import redefine_item_pos
 from base.utils.common import get_paged_dict
-from app.user.models import User
+from app.user.models.user_model import User
 
 
-# @login_required
+@login_required
 def system_user_list(request):
     qd = request.GET
     datas = User.objects.all().order_by("-pk")
@@ -32,7 +32,7 @@ def system_user_list(request):
     return render(request, 'system_user/user_list.html', context)
 
 
-# @login_required
+@login_required
 def system_user_new(request):
     if request.method == 'POST':
         qd = request.POST
@@ -65,7 +65,7 @@ def system_user_new(request):
         return render(request, 'system_user/user_new.html', context)
 
 
-# @login_required
+@login_required
 def change_password(request):
     if request.method == "POST":
         qd = request.POST

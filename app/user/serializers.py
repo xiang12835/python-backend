@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app.user.models import User
+from app.user.models.user_model import User
 
 
 class UserSerializer(serializers.Serializer):

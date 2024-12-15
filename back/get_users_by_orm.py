@@ -14,7 +14,7 @@ import django
 django.setup()
 
 
-from app.user.models import User
+from app.user.models.user_model import User
 
 
 def run():

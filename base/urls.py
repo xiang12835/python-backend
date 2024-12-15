@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import logout_then_login, LoginView
 from base import views
-from app.user.models import User
 from rest_framework import routers, serializers, viewsets
 
 
