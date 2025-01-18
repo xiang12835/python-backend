@@ -4,7 +4,7 @@ import os
 import sys
 
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
-sys.path.insert(0, os.path.join(PROJECT_ROOT, "base", "site-packages"))
+# sys.path.insert(0, os.path.join(PROJECT_ROOT, "base", "site-packages"))
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'base.settings')
