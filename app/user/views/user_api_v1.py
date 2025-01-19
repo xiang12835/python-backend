@@ -4,9 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
-
 from base.common.http import R
-from app.user.models.user_model import User
+from base.models import User
 
 
 @api_view(['GET'])

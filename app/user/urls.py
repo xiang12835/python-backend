@@ -3,21 +3,16 @@ from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from app.user.views import user_api_v1, user_api_v2, user_api_v3
-from app.user.views import system_user
 # from django.contrib import admin
 #
 # admin.autodiscover()
 
-
+# 后管 url
 urlpatterns = [
-
-    # 系统用户管理
-    path('system_user/list', system_user.system_user_list, name='system_user_list'),
-    path('system_user/detail', system_user.system_user_new, name='system_user_new'),
-    path('system_user/password', system_user.change_password, name='change_password'),
 
 ]
 
+# 接口 url
 urlpatterns += [
     # v1: @api_view decorator + json
     path('api/v1/user_lst/', user_api_v1.user_lst),

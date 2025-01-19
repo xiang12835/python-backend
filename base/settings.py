@@ -171,4 +171,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, "base/staticfiles")
 
 LOGIN_URL = "/signin"
-LOGIN_REDIRECT_URL = "/user/system_user/list"
+LOGIN_REDIRECT_URL = "/system_user/list"
+
+AUTH_USER_MODEL = 'base.User'

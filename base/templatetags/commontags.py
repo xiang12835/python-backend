@@ -146,14 +146,14 @@ def ifin_list(value, alist):
 
 # HOST = settings.GKAO_API_HOST
 
-SUBJECT_TK = "http://115.159.122.45"
+SUBJECT_TK = "http://115.xxx.122.45"
 
-# HOST = "http://img.winlesson.com"
+# HOST = "http://img.xxx.com"
 
 
 def replace_image_url(mat):
     if mat:
-        return 'src="%s"' % ("http://img.winlesson.com" + "/" + mat.group(1))
+        return 'src="%s"' % ("http://img.xxx.com" + "/" + mat.group(1))
 
 
 @register.filter

@@ -43,7 +43,7 @@ class Encryption(object):
 
 
 # HttpRequest get and post
-class BskRequest(object):
+class CustomRequest(object):
     """Http请求类"""
 
     def __init__(self, method, url, request=None, headers=None, cookies=None,
@@ -173,25 +173,25 @@ def hmac_sha1_encode(raw, key=""):
     return hashed.digest().encode("base64").rstrip('\n')
 
 
-def replace_bsk_image_url(mat):
+def replace_image_url(mat):
     if mat:
         return 'src="%s"' % (
-            "http://182.254.209.199:18" + mat.group(1))
+            "http://182.xxx.209.199:18" + mat.group(1))
 
 
 def replace_image_url(mat):
     if mat:
         return 'src="%s"' % (
-            "http://img.winlesson.com" + "/" + mat.group(1))
+            "http://img.xxx.com" + "/" + mat.group(1))
 
 
 def render_html_img(value, type):
     if int(type) == 1:
-        request_path = "http://182.254.209.199"
-        replace_func = replace_bsk_image_url
-    else:
+        request_path = "http://182.xx.209.199"
         replace_func = replace_image_url
-        request_path = "http://img.winlesson.com"
+    else:
+        request_path = "http://img.xxx.com"
+        replace_func = replace_image_url
 
     if request_path not in value:
         return re.sub(r'src=\s*?[\"\'](.*?)[\"\']', replace_func, value)
@@ -303,7 +303,7 @@ def strip_p_label(value):
 
 def strip_span_label(value):
     value = value.strip()
-    value = value.replace('粉笔教研','必胜课教研')
+    value = value.replace('XXX教研','YYY教研')
     if value.count('<span class="desClass">') > 1 or value.count('</span>') > 1:
         value = value.replace('<span class="desClass">', '')
         value = value.replace('</span>', '')
@@ -320,7 +320,7 @@ def add_span_label(value):
 
 if __name__ == "__main__":
     print(strip_p_label("<p>123<p>567</p>890</p>"))
-    print(Encryption(u"winlesson").encode())
+    print(Encryption(u"xxx").encode())
     print(gen_random_string(100))
     print(gen_uuid())
     # print gen_verify_code()

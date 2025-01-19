@@ -1,7 +1,8 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from app.user.models.user_model import User
+from base.models import User
+
 from app.user.serializers import UserSerializer
 
 
