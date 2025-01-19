@@ -12,7 +12,7 @@ from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
-class MinimalUserManager(UserManager):
+class SystemUserManager(UserManager):
     def create_user(self, username, **extra_fields):
         if not username:
             raise ValueError('The Username field must be set')
@@ -34,7 +34,7 @@ class MinimalUserManager(UserManager):
         return self._create_user(username, email=extra_fields.pop('email', None), password=password, **extra_fields)
 
 
-class User(AbstractUser):
+class SystemUser(AbstractUser):
     NORMAL = 0
     SUPERUSER = 1
     EDITOR = 2
@@ -49,7 +49,7 @@ class User(AbstractUser):
     age = models.IntegerField(verbose_name=u'年龄', blank=True, null=True)
     email = models.EmailField(_('email address'), blank=True, null=True)
 
-    objects = MinimalUserManager()
+    objects = SystemUserManager()
 
     '''
     # 重写groups字段，并指定related_name
@@ -79,7 +79,7 @@ class User(AbstractUser):
     class Meta:
         verbose_name = 'user'
         verbose_name_plural = 'users'
-        # app_label = 'base'
+        app_label = 'user'
 
 
     def __str__(self):

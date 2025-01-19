@@ -33,7 +33,7 @@ pip install django-rest-swagger==2.2.0
 
 ### 迁移数据库
 
-python3 manage.py makemigrations base
+python3 manage.py makemigrations user
 
 python3 manage.py migrate
 

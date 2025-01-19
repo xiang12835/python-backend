@@ -5,8 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from base.common.http import R
-from base.models import User
-
+from app.user.models.user_model import SystemUser as User
 
 @api_view(['GET'])
 def user_lst(request):

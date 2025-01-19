@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from base.models import User
-
+from app.user.models.user_model import SystemUser as User
 
 class UserSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)

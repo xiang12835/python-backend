@@ -62,11 +62,6 @@ urlpatterns = [
     # swagger ui
     path('doc/', schema_view, name='doc'),
 
-    # system_user
-    path('system_user/list', views.system_user_list, name='system_user_list'),
-    path('system_user/detail', views.system_user_new, name='system_user_new'),
-    path('system_user/password', views.change_password, name='change_password'),
-
     # custom app
     path('user/', include('app.user.urls')),
     # path('stat/', include('app.stat.urls')),

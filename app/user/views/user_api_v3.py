@@ -3,8 +3,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from base.models import User
-
+from app.user.models.user_model import SystemUser as User
 
 # https://www.django-rest-framework.org/tutorial/3-class-based-views/
 class UserList(APIView):

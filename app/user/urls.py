@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
-
+from app.user.views import user_view
 from app.user.views import user_api_v1, user_api_v2, user_api_v3
 # from django.contrib import admin
 #
@@ -9,6 +9,11 @@ from app.user.views import user_api_v1, user_api_v2, user_api_v3
 
 # 后管 url
 urlpatterns = [
+
+    path('system_user/list', user_view.system_user_list, name='system_user_list'),
+    path('system_user/detail', user_view.system_user_new, name='system_user_new'),
+    path('system_user/password', user_view.change_password, name='change_password'),
+
 
 ]
 
