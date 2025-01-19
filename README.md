@@ -53,7 +53,16 @@ python3 manage.py runserver 127.0.0.1:8000
 http://127.0.0.1:8000/signin - 内容管理系统登录页
 http://127.0.0.1:8000/admin - Django Admin后台管理界面
 http://127.0.0.1:8000/doc - 接口文档
+http://127.0.0.1:8000/api - DRF文档
 ```
+
+### 关于DRF文档
+
+http://127.0.0.1:8000/user/api/v1/user_add/
+
+http://127.0.0.1:8000/user/api/v2/users/
+
+http://127.0.0.1:8000/user/api/v3/users/1/
 
 ### 关于前端
 
