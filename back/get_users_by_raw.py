@@ -19,7 +19,7 @@ from base.common.django_raw import SqlExecute
 
 def run():
     sql = """
-    select * from user_user;
+    select * from user_systemuser limit 10;
     """
 
     users = SqlExecute.fetch_all(sql, db="default")

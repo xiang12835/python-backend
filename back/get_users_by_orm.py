@@ -14,11 +14,11 @@ import django
 django.setup()
 
 
-from app.user.models.user_model import User
+from app.user.models.user_model import SystemUser
 
 
 def run():
-    users = User.objects.all()
+    users = SystemUser.objects.all()[:10]
     print([(u.name, u.age) for u in users])
 
 
