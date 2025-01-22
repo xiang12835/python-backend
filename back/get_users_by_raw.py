@@ -14,7 +14,7 @@ import django
 django.setup()
 
 
-from base.common.django_raw import SqlExecute
+from base.libs.db.django_raw import SqlExecute
 
 
 def run():
