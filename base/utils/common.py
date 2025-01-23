@@ -314,7 +314,7 @@ def position_shuffle(objs, saved=False):
         return []
 
 
-def upload_file(memfile, url="http://123.206.180.82/file/upload/", data=None, _headers=None):
+def upload_file(memfile, url="http://123.xxx.180.82/file/upload/", data=None, _headers=None):
     if not _headers:
         _headers = {"Content-Type": "multipart/form-data"}
 
