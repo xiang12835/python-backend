@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 # from django.core.urlresolvers import reverse
 from django.urls import reverse, NoReverseMatch
 from django.http import HttpResponse, HttpResponseRedirect
-from base.utils.default import redefine_item_pos
+from base.utils.common import redefine_item_pos
 from base.utils.common import get_paged_dict
 from app.user.models.user_model import SystemUser
 from django.http import HttpResponse
